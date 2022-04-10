@@ -1,0 +1,12 @@
+{% if login == True %}
+<h3> Longin success {{username}} wellcome </h3>
+<a href = {{ url_for('logout')}}>Logout</a>
+<a href = {{ url_for('home')}}>Home</a>
+
+{% else %}
+<form methods = "get" id ="login" action={{url_for("login")}}>
+    <input type="id" id="loginId" name="loginId" placeholder="ID">
+    <input type="password" id="loginPw" name="loginPw" plsceholder="Psssworld">
+    <button type="submit" class="login">Login</button>
+</form>
+{% endif %}

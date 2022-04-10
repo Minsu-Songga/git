@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+  }
+  .bg {
+      /* The image used */
+      background-image:url('/static/img/cctv.jpg');
+
+      /* Full height */
+      height: 75%; 
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+      #grid1{
+        border:5px solid whitesmoke;
+        display:grid;
+        grid-template-columns: 3fr 7fr; /* 3fr 7fr = 비율 3:7*/
+      }
+      div{
+        border:5px solid gray;
+      }      
+        
+    /* 글씨크기 class */
+    .fontsize-1{ font-size : 10px; }
+    .fontsize-2{ font-size : 20px; }
+    .fontsize-smaller{ font-size : smallerpx; }
+    .fontsize-larger{ font-size : largerpx; }
+     
+        /* full 페이지 만들기 */
+    type="text/css">ul {  
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1; /*흰색*/
+    }
+        /* 상단 메뉴바 */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* 검은회색 */
+}
+ul:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #111; /*검정색*/
+}
+.active {
+    background-color: #4CAF50;  /*초록색*/
+}
+ </style>
+      
+<!-- 드롭다운 -->
+<style type="text/css">
+    .dropbtn {
+    background-color: #333; /*초록색 #4CAF50 */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #634040; /*흰색*/
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1 /*흰색*/
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #333;   /* 녹색 #3e8e41  */
+}</style>
+      
+      
+  </head>
+    
+    
+    
+  <body>
+    <!-- 상단 메뉴바 -->
+    <ul>
+      <li><a class="active" href="/home">Home</a></li>
+      <li><a href="map1">map1</a></li>
+      <!-- <li><a href="camera">camera</a></li> -->
+      <li> <div class="dropdown"> <!--드롭다운 카메라 -->
+      <button class="dropbtn">camara</button>
+      <div class="dropdown-content">
+        <a href="camera1">camera1</a>
+        <a href="camera2">camera2</a>
+        <a href="camera3">camera3</a>
+      </div>
+        </li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <!-- 그리드   -->
+    <div class="bg"></div>
+    <div id="grid1">
+    <div class="fontsize-larger">프로젝트 소개</div>
+    <div class="fontsize-2"> ashdfkjhsdajkf<br> -jklasjfkldjsalf<br> -jsdalfhjkdhskjfhasd</div>
+    </div>
+    <div id="grid1">
+    <div class="fontsize-larger">메뉴</div>
+    <div class="fontsize-2"> -map<br> -camera<br> asdhfjkasdhf</div>
+    <div class="bg"></div>
+    </div>
+  </body>
+</html>

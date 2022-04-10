@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- <meta http-equiv="refresh" content="5"> 5초마다 새로고침  -->
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+<!-- 드롭다운 -------------------------------------------------------------------------------------------->
+<style type="text/css">
+    .dropbtn {
+    background-color: #333; /*초록색 #4CAF50 */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /*흰색*/
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1 /*흰색*/
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #333;   /* 녹색 #3e8e41  */
+}</style>
+    
+<!-- 상단메뉴 바 -------------------------------------------------------------------------------------------->
+    <style type="text/css">ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+ul:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}</style>
+    
+    
+    
+<!-- ---------------------------------------------------------------------------------------------------     -->
+    
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_db4651c8f01840e48eec370bd3f8d41e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 70.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+<!-- ---------------------------------------------------------------------------------------------------     -->
+        
+</head>
+<body>
+    <!-- 상단 메뉴바 -->
+    <ul>
+      <li><a class="active" href="/home">Home</a></li>
+      <li><a href="map1">map1</a></li>
+      <!-- <li><a href="camera">camera</a></li> -->
+      <li> <div class="dropdown"> <!--드롭다운 카메라 -->
+      <button class="dropbtn">camara</button>
+      <div class="dropdown-content">
+        <a href="camera">camera 1</a>
+        <a href="#">camera 2</a>
+        <a href="#">camera 3</a>
+      </div>
+        </li>
+      <li><a href="#about">About</a></li>
+    </ul>
+<!-- ---------------------------------------------------------------------------------------------------     -->
+    
+    
+    
+    
+            <div class="folium-map" id="map_db4651c8f01840e48eec370bd3f8d41e" ></div>
+        
+</body>
+<script>    
+    
+            var map_db4651c8f01840e48eec370bd3f8d41e = L.map(
+                "map_db4651c8f01840e48eec370bd3f8d41e",
+                {
+                    center: [37.54380696363407, 126.67682839947783],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1b84275b225a47dfa04e2b73336614b4 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_db4651c8f01840e48eec370bd3f8d41e);
+        
+    
+            var marker_86d0c2db07b54369b43f2e4337efedf1 = L.marker(
+                [37.54381054028666, 126.67757270121972],
+                {}
+            ).addTo(map_db4651c8f01840e48eec370bd3f8d41e);
+        
+    
+        var popup_413eeb7b32e94208a3f43af88f7ee4b5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0d03e7d4b6e1488fae6fa7abc8f6c2ef = $(`<div id="html_0d03e7d4b6e1488fae6fa7abc8f6c2ef" style="width: 100.0%; height: 100.0%;">camera1</div>`)[0];
+            popup_413eeb7b32e94208a3f43af88f7ee4b5.setContent(html_0d03e7d4b6e1488fae6fa7abc8f6c2ef);
+        
+
+        marker_86d0c2db07b54369b43f2e4337efedf1.bindPopup(popup_413eeb7b32e94208a3f43af88f7ee4b5)
+        ;
+
+        
+    
+    
+            var marker_274837e24881482b875a06c227476441 = L.marker(
+                [37.542755762723104, 126.67658872977056],
+                {}
+            ).addTo(map_db4651c8f01840e48eec370bd3f8d41e);
+        
+    
+        var popup_a7c79a2038b04b1992a7aa09071c1390 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_efac3db152174aa59c190218345c2649 = $(`<div id="html_efac3db152174aa59c190218345c2649" style="width: 100.0%; height: 100.0%;">camera2</div>`)[0];
+            popup_a7c79a2038b04b1992a7aa09071c1390.setContent(html_efac3db152174aa59c190218345c2649);
+        
+
+        marker_274837e24881482b875a06c227476441.bindPopup(popup_a7c79a2038b04b1992a7aa09071c1390)
+        ;
+
+        
+    
+    
+            var marker_121c6aafcbac48b5bec3e79c35501e67 = L.marker(
+                [37.54379981033517, 126.67574577873687],
+                {}
+            ).addTo(map_db4651c8f01840e48eec370bd3f8d41e);
+        
+    
+        var popup_be2480defc8a41a2895124bb65e67116 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aaedfcdd9c6543d19f5d288a0455f3d0 = $(`<div id="html_aaedfcdd9c6543d19f5d288a0455f3d0" style="width: 100.0%; height: 100.0%;">camera3</div>`)[0];
+            popup_be2480defc8a41a2895124bb65e67116.setContent(html_aaedfcdd9c6543d19f5d288a0455f3d0);
+        
+
+        marker_121c6aafcbac48b5bec3e79c35501e67.bindPopup(popup_be2480defc8a41a2895124bb65e67116)
+        ;
+
+        
+    
+    
+            var marker_522b790ee3314ed28421d9abc2a4b351 = L.marker(
+                [37.54443645185251, 126.67668405002358],
+                {}
+            ).addTo(map_db4651c8f01840e48eec370bd3f8d41e);
+        
+    
+        var popup_55a04c4ff9c64e96a0d93e0ee619e278 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9d69b56279ce42f09dcd14acd7fba189 = $(`<div id="html_9d69b56279ce42f09dcd14acd7fba189" style="width: 100.0%; height: 100.0%;">camera4</div>`)[0];
+            popup_55a04c4ff9c64e96a0d93e0ee619e278.setContent(html_9d69b56279ce42f09dcd14acd7fba189);
+        
+
+        marker_522b790ee3314ed28421d9abc2a4b351.bindPopup(popup_55a04c4ff9c64e96a0d93e0ee619e278)
+        ;
+
+        
+    
+    
+            var circle_marker_aa061679ab3c4619bafdafc72486a572 = L.circleMarker(
+                [37.54381054028666, 126.67757270121972],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#132b5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 45.9, "stroke": true, "weight": 3}
+            ).addTo(map_db4651c8f01840e48eec370bd3f8d41e);
+        
+    
+        var popup_9ca1ec773c1c4cb889672e0197afe100 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a8fab4d2a876476ebddf55eca9c0caf0 = $(`<div id="html_a8fab4d2a876476ebddf55eca9c0caf0" style="width: 100.0%; height: 100.0%;">circle</div>`)[0];
+            popup_9ca1ec773c1c4cb889672e0197afe100.setContent(html_a8fab4d2a876476ebddf55eca9c0caf0);
+        
+
+        circle_marker_aa061679ab3c4619bafdafc72486a572.bindPopup(popup_9ca1ec773c1c4cb889672e0197afe100)
+        ;
+
+        
+    
+</script>
